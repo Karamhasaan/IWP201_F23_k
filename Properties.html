@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Properties</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="LogoP2">
+      <img src="DR.jpg" alt="Dr.jpg" />
+    </div>
+    <div class="floating-boxP2">
+      &nbsp; &nbsp;<a href="HOME.html"><img src="homeDr.png" alt="Dr.jpg" /></a
+      >&nbsp; &nbsp; <a href="AboutUs.html"> AboutUs</a> &nbsp; &nbsp;
+      <a href="Properties.html">Properties</a>
+    </div>
+    <table id="Information">
+      <thead>
+        <tr>
+          <th>اختيار</th>
+          <th>اظهار التفاصيل</th>
+          <th>الاجار الشهري</th>
+          <th>التفاصيل</th>
+          <th>المدينة</th>
+        </tr>
+      </thead>
+      <tbody id="flats"></tbody>
+    </table>
+
+    <button id="continueButton">متابعة</button>
+
+    <div id="overlay"></div>
+
+    <div id="applicationForm">
+      <h2>نموذج الطلب</h2>
+      <form id="form">
+        <label
+          >الاسم الكامل:
+          <input
+            type="text"
+            id="fullName"
+            pattern="[\u0621-\u064A\s]+"
+            title="أحرف هجائية فقط باللغة العربية" /></label
+        ><br />
+        <p></p>
+        <label
+          >الرقم الوطني:
+          <input
+            type="text"
+            id="nationalID"
+            pattern="^[0-9]{11}$"
+            required /></label
+        ><br />
+        <p></p>
+        <label
+          >تاريخ الميلاد:
+          <input type="date" id="dob" pattern="\d{4}-\d{2}-\d{2}" /></label
+        ><br />
+        <p></p>
+        <label
+          >رقم الموبايل:
+          <input type="text" id="mobile" pattern="^09[0-9]{8}$" /></label
+        ><br />
+        <p></p>
+        <label>البريد الإلكتروني: <input type="email" id="email" /></label
+        ><br />
+        <p></p>
+        <div class="captcha-container">
+          <button class="captcha-button" onclick="refreshCaptcha()">
+            تحديث Captcha
+          </button>
+
+          <div class="captcha" id="captcha">ABC123</div>
+          <p></p>
+          <label>ادخل الرمز السابق: <input type="text" id="captcha" /></label
+          ><br />
+        </div>
+        <!--<div class="g-recaptcha" data-sitekey="6Le85_kpAAAAAHN58KFd51z84ola-TMX74-WHS29"></div><br> -->
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+
+    <script src="myFunctions.js"></script>
+  </body>
+</html>
